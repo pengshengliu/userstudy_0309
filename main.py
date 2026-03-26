@@ -260,16 +260,15 @@ def page(video_num, method_num, random_num):
                     st.warning("请回答当前页问题！")
                 else:
                     st.write('提交中...请耐心等待...')
+                    st.write("真实性: ", str(human_likeness))
+                    st.write("多样性: ", str(smoothness))
+                    st.write("语音与手势同步性: ", str(semantic_accuracy))
                     count = read_email_(myemail, password)
                     count += 1
                     send_email(myemail, password, count)
                     ID, localtime = data_collection(myemail, password, human_likeness, smoothness, semantic_accuracy, count)
                     st.divider()
-                    st.markdown(':blue[请对下面的结果进行截图。]')
-                    st.write("**Result:**")
-                    st.write("真实性: ", str(human_likeness))
-                    st.write("多样性: ", str(smoothness))
-                    st.write("语音与手势同步性: ", str(semantic_accuracy))
+                    st.markdown(':blue[请对结果进行截图。]')
                     st.write("**提交时间:** ", localtime)
                     st.write("**提交ID:** ", ID)
                     st.session_state.button_clicked = True 
