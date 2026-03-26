@@ -299,7 +299,7 @@ if __name__ == '__main__':
     #count = 0
 
     if count>=30: 
-        st.error("答题人数已满，感谢你的理解！")
+        st.error("本场答题人数已满，感谢你的关注！")
         st.cache_data.clear()
     else:
         if "human_likeness" and "smoothness" and "semantic_accuracy" not in st.session_state:
